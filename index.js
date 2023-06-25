@@ -8,6 +8,7 @@ import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 const BASE_URL=process.env.BASE_URL
+const PORT=process.env.PORT ||8500
 const app =express()
 dotenv.config()
 
@@ -47,7 +48,7 @@ app.use((err, req, res, next) => {
   });
   
 
-app.listen(BASE_URL,()=>{ 
+app.listen(PORT,()=>{ 
     connect()
     console.log("connected to backend !")
 }) 
